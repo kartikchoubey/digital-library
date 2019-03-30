@@ -1,0 +1,15 @@
+.navbar-brand {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbar .nav-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.nav-item.active {
+    border-left: #444 3px solid;
+}

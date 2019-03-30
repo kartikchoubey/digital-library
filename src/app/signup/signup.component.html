@@ -1,0 +1,61 @@
+<!-- PAGE HEADER -->
+<header id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center">
+        <h1>Sign-Up</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INPUT FORM -->
+<div class="container mt-5 mb-5" >
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input class="form-control" type="text" id="name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input class="form-control form-control-lg" type="email" id="email" placeholder="Enter email">
+      <small class="form-text text-muted">Your email will not ever be shared</small>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select class="form-control" id="gender">
+          <option>Male</option>
+          <option>Female</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control is-invalid" type="text" id="password">
+      <div class="invalid-feedback">
+          Password not strong enough
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password2">Confirm Password</label>
+      <input class="form-control is-invalid" type="text" id="password2">
+      <div class="invalid-feedback">
+          Password does not match
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer id="main-footer" class="text-center p-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>Copyright &copy;
+          <span id="year"></span> Libralize</p>
+      </div>
+    </div>
+  </div>
+</footer>

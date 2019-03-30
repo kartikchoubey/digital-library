@@ -1,0 +1,32 @@
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark mb-0">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/home">Libralize</a>
+        <ul class="navbar-nav">
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/qna" routerLinkActive="active">Q&A</a>
+            </li>
+            <li class="nav-item dropdown mx-3">
+                <a routerLink="/buynsell" 
+                    class="nav-link dropdown-toggle" 
+                    data-toggle="dropdown" 
+                    routerLinkActive="active">Buy & Sell</a>
+                <div class="dropdown-menu">
+                    <a routerLink="/buybooks" class="dropdown-item" routerLinkActive="active">Buy books</a>
+                    <a routerLink="/sellbooks" class="dropdown-item" routerLinkActive="active">Sell books</a>
+                </div>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/signin" routerLinkActive="active">Sign In</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
