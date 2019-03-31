@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { QnaComponent } from './qna/qna.component';
 import { BuybooksComponent } from './buybooks/buybooks.component';
 import { SellbooksComponent } from './sellbooks/sellbooks.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,9 @@ import { SellbooksComponent } from './sellbooks/sellbooks.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-   
-    
-   
-
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+     
   ],
   providers: [],
   bootstrap: [AppComponent]
