@@ -14,9 +14,12 @@ import { SignupComponent } from './signup/signup.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { QnaComponent } from './qna/qna.component';
-import { BuybooksComponent } from './buybooks/buybooks.component';
-import { SellbooksComponent } from './sellbooks/sellbooks.component';
 import { environment } from 'src/environments/environment';
+import { SigninAdminComponent } from './signin-admin/signin-admin.component';
+import { AddBookComponent } from './add-book/add-book.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
+import { DeleteBookComponent } from './delete-book/delete-book.component';
 
 
 @NgModule({
@@ -28,8 +31,11 @@ import { environment } from 'src/environments/environment';
     SigninComponent,
     SignupComponent,
     ContactComponent,
-    BuybooksComponent,
-    SellbooksComponent
+    SigninAdminComponent,
+    AddBookComponent,
+    AdminpanelComponent,
+    UpdateBookComponent,
+    DeleteBookComponent
   ],
   imports: [
     BrowserModule,
