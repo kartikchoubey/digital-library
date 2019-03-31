@@ -1,42 +1,42 @@
 .carousel-item {
-    height: 450px;
+  height: 450px;
 }
 
 .carousel-image-1 {
-    background: url(img-home/image1.jpg);
-    background-size: cover;
+  background: url(img-home/lib2.jpg);
+  background-size: cover;
 }
 
 .carousel-image-2 {
-    background: url(img-home/image2.jpg);
-    background-size: cover;
+  background: url(img-home/lib5.jpg);
+  background-size: cover;
 }
 
 .carousel-image-3 {
-    background: url(img-home/image3.jpg);
-    background-size: cover;
+  background: url(img-home/lib4.jpg);
+  background-size: cover;
 }
 
 #home-heading {
-    position: relative;
-    min-height: 200px;
-    background: url(img-home/lights.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    text-align: center;
-    color: #fff;
+  position: relative;
+  min-height: 200px;
+  background: url(img-home/lights.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
 }
-  
-.dark-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-  }
 
-  #main-footer {
-    background: #000;
-    color: #fff;
-  }
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#main-footer {
+  background: #000;
+  color: #fff;
+}
