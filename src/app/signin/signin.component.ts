@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 userList:Array<any>
-loginError:string;
+
 notLogin=false;
 userDetail:{
   name:string,email:string,

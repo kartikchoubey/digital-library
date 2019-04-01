@@ -9,7 +9,7 @@
     </div>
   </div>
 </header>
-
+<div class="text-center mt-3 text-danger display-4"  *ngIf="notAdmin">User Is Not Admin!!</div>
 <!-- LOGIN -->
 <section id="login">
   <div class="container mt-5 mb-5">
@@ -20,16 +20,22 @@
             <h4>Admin Login</h4>
           </div>
           <div class="card-body">
-            <form action="index.html">
+            <form action="index.html" (ngSubmit)="onSubmit()" #f="ngForm">
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control">
+                <label for="email" >Email</label>
+                <input type="text"  ngModel
+                name="email"
+                required email class="form-control" #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched">
+                  Please enter a valid email!</span>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control">
+                <input type="password"ngModel 
+                name="password" class="form-control" 
+                required>
               </div>
-              <input type="submit" value="Login" routerLink="/adminpanel" class="btn btn-primary btn-block">
+              <button class="btn btn-primary" type="submit" [disabled]="!f.valid">SignUp</button>
             </form>
           </div>
         </div>
