@@ -3,58 +3,39 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 m-auto text-center">
-
-        <h1>User Sign-In</h1>
+        <h1>Admin Sign-In</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
-
       </div>
     </div>
   </div>
 </header>
-
+<div class="text-center mt-3 text-danger display-4"  *ngIf="notAdmin">User Is Not Admin!!</div>
 <!-- LOGIN -->
-<div class="text-center mt-3 text-danger display-4"  *ngIf="notLogin">Invalid User!!</div>
-
 <section id="login">
   <div class="container mt-5 mb-5">
     <div class="row">
       <div class="col-md-6 mx-auto">
         <div class="card">
           <div class="card-header">
-            <h4>User Login</h4>
+            <h4>Admin Login</h4>
           </div>
           <div class="card-body">
             <form action="index.html" (ngSubmit)="onSubmit()" #f="ngForm">
               <div class="form-group">
-                <label for="email">Email</label>
-<<<<<<< HEAD
-                <input type="text" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" />
-              </div>
-              <input
-                type="submit"
-                value="Login"
-                class="btn btn-primary btn-block"
-              />
-=======
-                <input type="email" 
-                ngModel
+                <label for="email" >Email</label>
+                <input type="text"  ngModel
                 name="email"
-                required email
-                 class="form-control" #email="ngModel">
-                 <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                required email class="form-control" #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched">
+                  Please enter a valid email!</span>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" ngModel 
-                 name="password" class="form-control" 
-                 required>
+                <input type="password"ngModel 
+                name="password" class="form-control" 
+                required>
               </div>
               <button class="btn btn-primary" type="submit" [disabled]="!f.valid">SignUp</button>
->>>>>>> 4524dc736d726787bf9f413d41e42fc1c094ed9b
             </form>
           </div>
         </div>
@@ -68,7 +49,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p>Copyright &copy; <span id="year"></span> Libralize</p>
+        <p>Copyright &copy;
+          <span id="year"></span> Libralize</p>
       </div>
     </div>
   </div>
