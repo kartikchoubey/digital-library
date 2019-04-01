@@ -19,9 +19,6 @@ import { SigninAdminComponent } from './signin-admin/signin-admin.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
-import { DeleteBookComponent } from './delete-book/delete-book.component';
-
-
 
 @NgModule({
   declarations: [
@@ -36,7 +33,6 @@ import { DeleteBookComponent } from './delete-book/delete-book.component';
     AddBookComponent,
     AdminpanelComponent,
     UpdateBookComponent,
-    DeleteBookComponent
   ],
   imports: [
     BrowserModule,

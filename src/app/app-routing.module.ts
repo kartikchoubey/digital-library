@@ -10,7 +10,6 @@ import { SigninAdminComponent } from './signin-admin/signin-admin.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
-import { DeleteBookComponent } from './delete-book/delete-book.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,8 +21,7 @@ const appRoutes: Routes = [
     { path: 'adminpanel', component: AdminpanelComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'addbook', component: AddBookComponent },
-    { path: 'updatebook', component: UpdateBookComponent },
-    { path: 'deletebook', component: DeleteBookComponent }
+    { path: 'updatebook', component: UpdateBookComponent }
 ]
 
 @NgModule({
