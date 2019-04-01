@@ -1,0 +1,66 @@
+<!-- PAGE HEADER -->
+<header id="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto text-center">
+          <h1>Add Book</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- CONTENT -->
+<div class="container mt-5 mb-5">
+    <form>
+      <div class="form-group">
+        <label for="name">Name of the book</label>
+        <input type="text" class="form-control" placeholder="Enter book name">
+      </div>
+      <div class="form-group">
+        <label for="name">Name of the author</label>
+        <input type="text" class="form-control" placeholder="Enter author's name">
+      </div>
+      <div class="form-group">
+        <label for="name">Publisher name</label>
+        <input type="text" class="form-control" placeholder="Enter publisher name">
+      </div>
+      <div class="form-group">
+        <label for="name">Semester</label>
+        <input type="number" class="form-control" placeholder="Enter the semester">
+      </div>
+      <div class="form-group">
+        <label for="name">Price *</label>
+        <input type="number" class="form-control" placeholder="Enter book price">
+      </div>
+      <div class="dropdown">
+        <label for="branch">Branch *</label><br>
+        <button class="btn btn-success" type="button" data-toggle="dropdown">Select Branch
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><input class="ml-3" type="checkbox" >CS</li>
+            <li><input class="ml-3" type="checkbox" >EC</li>
+            <li><input class="ml-3" type="checkbox" >FT</li>
+            <li><input class="ml-3" type="checkbox" >CV</li>
+            <li><input class="ml-3" type="checkbox" >CM</li>
+            <li><input class="ml-3" type="checkbox" >ME</li>
+            <li><input class="ml-3" type="checkbox" >EX</li>
+        </ul>
+    </div>
+    <div class="form-group mt-3">
+        <label for="link">PDF link</label>
+        <input type="text" class="form-control" placeholder="Enter the link">
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="file">Book cover</label>
+        <input type="file" id="file" class="form-control-file">
+        <small class="form-text text-muted" id="fileHelp">Max 3mb size</small>
+      </div>
+      <div class="form-group">
+        <label for="message">Book description</label>
+        <textarea class="form-control" id="message" rows="3"></textarea>
+      </div>
+      <button class="btn btn-success">Add book</button>
+    </form>
+  </div>
