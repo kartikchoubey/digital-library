@@ -12,6 +12,12 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 userList:Array<any>
+loginError:string;
+notLogin=false;
+userDetail:{
+  name:string,email:string,
+  password:string
+}
 
   constructor(private db:AngularFirestore,private router:Router) { }
   @ViewChild('f') signinForm: NgForm;
@@ -20,7 +26,7 @@ userList:Array<any>
   }
   loginCheck(){
      return this.db.collection('users',ref=>ref.where('email','==',this.signinForm.value.email)
-    .where('password','==',this.signinForm.value.password).limit(1)).get()
+    .where('password','==',this.signinForm.value.password).limit(1)).snapshotChanges()
     
     
     // .then(function(doc) {
@@ -33,15 +39,29 @@ userList:Array<any>
     //   }})
   }
   onSubmit(){
-   // console.log(this.signinForm)
-    this.loginCheck().subscribe(result=>{
-      this.userList=result.docs;
-    console.log(result.docs);
-    if(this.userList.length == 1){
-      this.router.navigate(['/home']);
-    }
+   
+    this.loginCheck().subscribe(data=>{
+      this.userList=data.map(e=>{
+         return {
+           id:e.payload.doc.id,
+          userData: e.payload.doc.data()
+         } 
+          
+        
+          
+      })
+    //console.log(this.userList);
+              
+     if(this.userList.length ==1){
+      this.userDetail= this.userList[0].userData;
+      console.log(this.userDetail.name)
+       this.router.navigate(['/home']);
+     }else{
+       this.notLogin=true
+      }
 
     })
+   
   } 
-  
+ 
 }
