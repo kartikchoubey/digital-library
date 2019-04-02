@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin-admin.component.css']
 })
 export class SigninAdminComponent implements OnInit {
+ 
   @ViewChild('f') adminForm: NgForm;
   constructor( private db:AngularFirestore,private router:Router) { }
   notAdmin=false;
