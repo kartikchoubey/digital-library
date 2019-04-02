@@ -19,6 +19,11 @@ import { SigninAdminComponent } from './signin-admin/signin-admin.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookItemComponent } from './book-list/book-item/book-item.component';
+import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-admin.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { UpdateBookComponent } from './update-book/update-book.component';
     AddBookComponent,
     AdminpanelComponent,
     UpdateBookComponent,
+    UserPanelComponent,
+    BookDetailComponent,
+    BookListComponent,
+    BookItemComponent,
+    BookItemAdminComponent,
   ],
   imports: [
     BrowserModule,
