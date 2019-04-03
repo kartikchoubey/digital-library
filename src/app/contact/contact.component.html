@@ -34,6 +34,8 @@
           </div>
         </div>
       </div>
+
+      <!-- INPUT FORM -->
       <div class="col-md-8">
         <div class="card p-4">
           <div class="card-body">
@@ -46,6 +48,10 @@
                     type="text"
                     class="form-control"
                     placeholder="First Name"
+                    ngModel
+                    name="firstname"
+                    required
+                    #firstname="ngModel"
                   />
                 </div>
               </div>
@@ -55,20 +61,31 @@
                     type="text"
                     class="form-control"
                     placeholder="Last Name"
+                    ngModel
+                    name="lastname"
+                    required
+                    #lastname="ngModel"
                   />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Email" />
+                  <input type="email" class="form-control" placeholder="Email" ngModel
+                  name="email"
+                  required
+                  #email="ngModel"/>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     placeholder="Phone Number"
+                    ngModel
+                    name="phonenumber"
+                    required
+                    #phonenumber="ngModel"
                   />
                 </div>
               </div>
@@ -79,22 +96,24 @@
                   <textarea
                     class="form-control"
                     placeholder="Message"
+                    ngModel
+                    name="message"
+                    required
+                    #message="ngModel"
                   ></textarea>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <input
-                    type="submit"
-                    value="Submit"
-                    class="btn btn-success btn-block"
-                  />
+                    <button class="btn btn-success btn-block" type="submit" [disabled]="!f.valid">
+                        Submit
+                    </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div>       
     </div>
   </div>
 </section>
