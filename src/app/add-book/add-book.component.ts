@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-// import * as firebase from 'firebase/app';
-// import 'firebase/storage';
-//import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask }
- //from 'angularfire2/storage';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
+// import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask }
+//  from 'angularfire2/storage';
 
 
 
@@ -21,9 +21,11 @@ export class AddBookComponent implements OnInit {
   // selectedItems = [];
    basePath:string = '/bookCovers';
   // imgUrl:String
+  // ref:AngularFireStorageReference
+  // task:AngularFireUploadTask
 
   dropdownSettings = {};
-  constructor(  private db:AngularFirestore,
+  constructor( private db:AngularFirestore,
     private router:Router) { }
 
   @ViewChild('f') addBookForm: NgForm;
@@ -76,7 +78,8 @@ export class AddBookComponent implements OnInit {
       branch:value.branch,
       pdf_link:value.pdf,
       img_link:value.imgLink,
-      book_description:value.bookDescription
+      book_description:value.bookDescription,
+      buy_link:value.buyLink
       
        })}
       //  uploadFile(){
@@ -85,9 +88,9 @@ export class AddBookComponent implements OnInit {
       //      this.task = this.ref.put(this.addBookForm.value.imgLink)
          
       //     this.task  .then((snapshot)=>{
-      //       this.imgUrl=snapshot.downloadURL;
+      //      console.log(snapshot.downloadURL);
 
-      //   });
+      //   });}
       //   //  let storageRef:AngularFireStorageReference  = this.afStorage.
       //   //  ref(`${this.basePath}/${this.addBookForm.value.book-name}`);
          

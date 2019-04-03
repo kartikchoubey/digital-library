@@ -68,5 +68,17 @@
 <hr>
 
 <div class="container mt-5 mb-5">
-  <app-book-list></app-book-list>
+  <div class="container mt-5 mb-5"  >
+    <div class="row" >
+      <div class="col-md-3" *ngFor="let booksData of BookDetail">
+        <div class="card"  style="width:20rem;">
+          <img class="img-responsive" style="max-height: 300px; max-width: 300px;" 
+          [src]="booksData.img_link" alt="">
+          <div class="card-body">
+            <h4 class="card-title">{{booksData.book_name}}</h4>
+            <a class="btn btn-primary" routerLink="/bookdetail">More...</a>
+        </div>
+      </div>
+      <br>
+      </div>
 </div>

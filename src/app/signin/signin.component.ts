@@ -55,7 +55,7 @@ userDetail:{
      if(this.userList.length ==1){
       this.userDetail= this.userList[0].userData;
       console.log(this.userDetail.name)
-       this.router.navigate(['/home']);
+       this.router.navigate(['/userpanel']);
      }else{
        this.notLogin=true
       }

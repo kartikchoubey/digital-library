@@ -12,9 +12,9 @@ export class SigninAdminComponent implements OnInit {
  
   @ViewChild('f') adminForm: NgForm;
   constructor( private db:AngularFirestore,private router:Router) { }
-  notAdmin=false;
+   notAdmin=false;
   adminList:Array<any>
-adminDetail:{
+ adminDetail:{
     name:string,email:string,
     password:string
   }
@@ -40,7 +40,7 @@ adminDetail:{
               
      if(this.adminList.length ==1){
       this.adminDetail= this.adminList[0].userData;
-      console.log(this.adminDetail.name)
+      console.log(this.adminList)
        this.router.navigate(['/adminpanel']);
      }else{
        this.notAdmin=true
