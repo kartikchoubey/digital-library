@@ -12,64 +12,57 @@
 
 <!-- CONTENT -->
 <div class="container mt-5 mb-5">
-    <form>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
       <div class="form-group">
         <label for="name">Name of the book</label>
-        <input type="text" class="form-control" placeholder="Enter book name">
+        <input type="text" required ngModel name="bookName" class="form-control" placeholder="Enter book name">
       </div>
       <div class="form-group">
         <label for="name">Name of the author</label>
-        <input type="text" class="form-control" placeholder="Enter author's name">
+        <input type="text" required name="authorName" ngModel class="form-control" placeholder="Enter author's name">
       </div>
       <div class="form-group">
         <label for="name">Publisher name</label>
-        <input type="text" class="form-control" placeholder="Enter publisher name">
+        <input type="text" name="publisherName" ngModel required class="form-control" placeholder="Enter publisher name">
       </div>
       <div class="form-group">
-          <label for="semester">Select Semester *</label>
-          <select class="form-control" id="semester">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-          </select>
+
+        <label for="name">Semester</label>
+        <input type="number" 
+        name="semester" required ngModel
+        class="form-control" placeholder="Enter the semester">
+
       </div>
       <div class="form-group">
         <label for="name">Price *</label>
-        <input type="number" class="form-control" placeholder="Enter book price">
+        <input type="number" 
+        name="prize" required ngModel class="form-control" placeholder="Enter book price">
       </div>
       <div class="dropdown">
         <label for="branch">Branch *</label><br>
-        <button class="btn btn-success" type="button" data-toggle="dropdown">Select Branch
+        <button class="btn btn-success"  aria-required="true" type="button" data-toggle="dropdown">Select Branch
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-            <li><input class="ml-3" type="checkbox" >CS</li>
-            <li><input class="ml-3" type="checkbox" >EC</li>
-            <li><input class="ml-3" type="checkbox" >FT</li>
-            <li><input class="ml-3" type="checkbox" >CV</li>
-            <li><input class="ml-3" type="checkbox" >CM</li>
-            <li><input class="ml-3" type="checkbox" >ME</li>
-            <li><input class="ml-3" type="checkbox" >EX</li>
+            <li *ngFor="let myOption of myOptions"><input  aria-selected="true" type="radio" 
+              ngModel name="branch" [value]="myOption.value"> 
+              {{ myOption.name }}</li>
+           
         </ul>
     </div>
     <div class="form-group mt-3">
         <label for="link">PDF link</label>
-        <input type="text" class="form-control" placeholder="Enter the link">
+        <input type="text" name="pdf"  ngModel required class="form-control" placeholder="Enter the link">
     </div>
     
     <div class="form-group">
-        <label for="file">Book cover</label>
-        <input type="file" id="file" class="form-control-file">
+        <label for="text">Book cover Link </label>
+        <input type="text" id="bookcover" name="imgLink" ngModel  required class="form-control" placeholder="Enter the link">
         <small class="form-text text-muted" id="fileHelp">Max 3mb size</small>
       </div>
       <div class="form-group">
         <label for="message">Book description</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
+        <textarea class="form-control" name="bookDescription" ngModel required id="message" rows="3"></textarea>
       </div>
-      <button class="btn btn-success" routerLink="/adminpanel">Add book</button>
+      <button class="btn btn-success" routerLink="/adminpanel" [disabled]="!f.valid">Add book</button>
     </form>
   </div>

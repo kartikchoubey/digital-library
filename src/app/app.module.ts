@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
+
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
@@ -19,11 +19,19 @@ import { SigninAdminComponent } from './signin-admin/signin-admin.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
+
+
+import { AppService } from './app.service';
+import { AngularFireModule } from '@angular/fire'
+import { AngularFireStorageModule } from 'angularfire2/storage';
+
+
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookItemComponent } from './book-list/book-item/book-item.component';
 import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -49,10 +57,11 @@ import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-a
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
-     
+    AngularFirestoreModule,
+    AngularFireStorageModule
+   
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
