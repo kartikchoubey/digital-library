@@ -33,6 +33,7 @@ import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-a
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,10 @@ import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-a
     BookDetailComponent,
    
     BookItemAdminComponent,
+   
+ 
+   
+    
    
   ],
   imports: [

@@ -11,6 +11,7 @@ export class AppService implements OnInit{
 //bookDetail:Array<Book>
 booksCollection:AngularFirestoreCollection<Book> ;
 books:Observable<Book[]>
+selectedBook:Book
 
   constructor(public db:AngularFirestore) { 
     
@@ -22,6 +23,9 @@ books:Observable<Book[]>
   getBook(){
     this.books=this.db.collection('Books').valueChanges()
    return this.books
+  }
+  getSelectedBook(value:Book){
+  this.selectedBook=value
   }
  
 }
