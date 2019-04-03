@@ -11,7 +11,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookDetailComponent } from './user-panel/book-detail/book-detail.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },

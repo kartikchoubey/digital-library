@@ -48,6 +48,29 @@
               {{ myOption.name }}</li>
            
         </ul>
+        <div class="form-group">
+          <label for="name">Buy Link*</label>
+          <input type="text" 
+          name="buyLink" required ngModel class="form-control">
+        </div>
+            <!-- <ng-multiselect-dropdown
+            [name]='branch'
+            [placeholder]="'Select Branch'"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems.item_text"
+            [ngModelOptions]="{standalone: true}"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            >
+          </ng-multiselect-dropdown> -->
+          <!--  [ngModel]="selectedItems" -->
+        <!-- <select name="branch"   class="dropdown-menu" ngModel>
+            <option [value]="myOption.value">
+             {{myOption.name}}
+            </option> -->
+          
+      <!-- </select>  -->
     </div>
     <div class="form-group mt-3">
         <label for="link">PDF link</label>

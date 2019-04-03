@@ -27,10 +27,11 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 
 
 import { UserPanelComponent } from './user-panel/user-panel.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookItemComponent } from './book-list/book-item/book-item.component';
+import { BookDetailComponent} from './user-panel/book-detail/book-detail.component'
+
 import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-admin.component';
+
+
 
 
 @NgModule({
@@ -48,9 +49,13 @@ import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-a
     UpdateBookComponent,
     UserPanelComponent,
     BookDetailComponent,
-    BookListComponent,
-    BookItemComponent,
+   
     BookItemAdminComponent,
+   
+ 
+   
+    
+   
   ],
   imports: [
     BrowserModule,
