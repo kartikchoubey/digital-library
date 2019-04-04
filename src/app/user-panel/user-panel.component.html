@@ -5,86 +5,85 @@
       <div class="col-md-6 m-auto text-center">
         <h1>Welcome Username</h1>
         <div class="dropdown">
-            <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">
-                Manage
-            </button>
-            <div class="dropdown-menu" style="cursor: pointer">
-                <a class="dropdown-item" routerLink="/qna">Q & A</a>
-                <a class="dropdown-item" routerLink="/contact">Contact Us</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/home">Logout</a>
-            </div>
+          <button
+            class="btn btn-dark dropdown-toggle"
+            type="button"
+            data-toggle="dropdown"
+          >
+            Manage
+          </button>
+          <div class="dropdown-menu" style="cursor: pointer">
+            <a class="dropdown-item" routerLink="/qna">Q & A</a>
+            <a class="dropdown-item" routerLink="/contact">Contact Us</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/home">Logout</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
 <!-- SEARCH -->
 <div class="container mt-5 mb-5">
   <div class="row">
-    
-        <form (ngSubmit)="onSubmit()" #f="ngForm">
-            <div class="col-md-6">
-            <div class="form-group">
-                <label for="branch">Select Branch *</label>
-                <select 
-                class="form-control" ngModel name="branchOption"
-              id="branch">
-              <option value="" selected disabled hidden>Choose Branch</option>
-               <option
-                    *ngFor="let option of myOption" 
-                    [value]="option.value">{{option.option}}</option>
-                    
-                </select>
-            </div>
-          </div>
-           
-        <div class="col-md-6">  
-            <div class="form-group">
-                <label for="semester">Select Semester *</label>
-                <select class="form-control" id="semester"
-                ngModel name="semester">
-                <option value="" selected disabled hidden>Choose Semester</option>
-                    <option
-                    *ngFor="let sem of semester" 
-                    [value]="sem.value">{{sem.option}}</option>
-                </select>
-            </div>
-            
-          </div> 
-          <div class="col-md-2">
-              <div class="form-group">
-                <br>
-                <button  type="submit" class="btn btn-success">Search books</button>
-              </div>
-         
-    
-            </div>
-        
-        </form>
-     
-    </div>
-    
- </div>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="branch">Select Branch *</label>
+          <select class="form-control" ngModel name="branchOption" id="branch">
+            <option value="" selected disabled hidden>Choose Branch</option>
+            <option *ngFor="let option of myOption" [value]="option.value">{{
+              option.option
+            }}</option>
+          </select>
+        </div>
+      </div>
 
-<hr>
-
-<div class="container mt-5 mb-5">
-  <div class="container mt-5 mb-5"  >
-    <div class="row" >
-        <div class="col-md-3"  *ngFor="let booksData of BookDetail" >
-            <div class="card"  style="width:20rem;">
-              <img class="img-responsive" style="max-height: 300px; max-width: 300px;" 
-              [src]="booksData.img_link" alt="">
-              <div class="card-body">
-                <h4 class="card-title">{{booksData.book_name}}</h4>
-                <button (click)="getBook(booksData)" class="btn btn-primary" routerLink="/bookdetail">More...</button>
-            </div>
-          </div>
-          <br>
-          </div>
-    
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="semester">Select Semester *</label>
+          <select class="form-control" id="semester" ngModel name="semester">
+            <option value="" selected disabled hidden>Choose Semester</option>
+            <option *ngFor="let sem of semester" [value]="sem.value">{{
+              sem.option
+            }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <br />
+          <button type="submit" class="btn btn-success">Search books</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
+<hr />
+<div class="container mt-5 mb-5">
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let booksData of BookDetail">
+        <div class="card" style="width:20rem;">
+          <img
+            class="img-responsive"
+            style="max-height: 300px; max-width: 300px;"
+            [src]="booksData.img_link"
+            alt=""
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{ booksData.book_name }}</h4>
+            <button
+              (click)="getBook(booksData)"
+              class="btn btn-primary"
+              routerLink="/bookdetail"
+            >
+              More...
+            </button>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
   </div>
-  </div>
+</div>

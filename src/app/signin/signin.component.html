@@ -3,17 +3,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 m-auto text-center">
-
         <h1>User Sign-In</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
-
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas,
+          temporibus?
+        </p>
       </div>
     </div>
   </div>
 </header>
 
 <!-- LOGIN -->
-<div class="text-center mt-3 text-danger display-4"  *ngIf="notLogin">Invalid User!!</div>
+<div class="text-center mt-3 text-danger display-4" *ngIf="notLogin">
+  Invalid User!!
+</div>
 
 <section id="login">
   <div class="container mt-5 mb-5">
@@ -28,22 +31,37 @@
               <div class="form-group">
                 <label for="email">Email</label>
 
-                <input type="email" 
-                ngModel
-                name="email"
-                required email
-                 class="form-control" #email="ngModel">
-                 <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                <input
+                  type="email"
+                  ngModel
+                  name="email"
+                  required
+                  email
+                  class="form-control"
+                  #email="ngModel"
+                />
+                <span class="help-block" *ngIf="!email.valid && email.touched"
+                  >Please enter a valid email!</span
+                >
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" ngModel 
-                 name="password" class="form-control" 
-                 required>
+                <input
+                  type="password"
+                  ngModel
+                  name="password"
+                  class="form-control"
+                  required
+                />
               </div>
 
-              <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Login</button>
-
+              <button
+                class="btn btn-primary"
+                type="submit"
+                [disabled]="!f.valid"
+              >
+                Login
+              </button>
             </form>
           </div>
         </div>
