@@ -13,3 +13,7 @@
 .nav-item.active {
     border-left: #444 3px solid;
 }
+
+.fas {
+    color: azure;
+}

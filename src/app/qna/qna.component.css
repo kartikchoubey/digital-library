@@ -13,3 +13,10 @@
     color: #fff;
   }
   
+  .navbar-brand {
+    letter-spacing: 1px;
+  }
+  
+  .fas {
+    color: azure;
+  }
