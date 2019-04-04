@@ -17,6 +17,13 @@
   margin-top: -50px;
 }
 
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.fas {
+  color: azure;
+}
 
 input.ng-invalid.ng-touched {
   border: 1px solid red;
