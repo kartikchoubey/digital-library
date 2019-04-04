@@ -4,18 +4,59 @@
     <div class="row">
       <div class="col-md-6 m-auto text-center">
         <h1>Welcome Admin</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
+        <button class="btn btn-success" type="button" routerLink="/addbook">Add a book</button>
       </div>
     </div>
   </div>
 </header>
 
-<div class="container">    
-    <hr>
-    <button class="btn btn-dark" type="button" routerLink="/addbook">Add a book</button>
-    <hr>
-    <button class="btn btn-success" type="button" routerLink='/updatebook'>Update a book</button>
-    <hr>
-    <button class="btn btn-danger" type="button" routerLink='/deletebook'>Delete a book</button>
-    <hr>
+<!-- SEARCH -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-4">
+          <form>
+              <div class="form-group">
+                  <label for="branch">Select Branch *</label>
+                  <select class="form-control" id="branch">
+                      <option>CS</option>
+                      <option>EC</option>
+                      <option>EX</option>
+                      <option>ME</option>
+                      <option>FT</option>
+                      <option>CM</option>
+                  </select>
+              </div>
+          </form>
+      </div>
+      <div class="col-md-4">
+          <form>
+              <div class="form-group">
+                  <label for="semester">Select Semester *</label>
+                  <select class="form-control" id="semester">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                  </select>
+              </div>
+          </form>
+      </div>
+      <div class="col-md-4">
+          <form>
+              <div class="form-group">
+                <br>
+                <button class="btn btn-success">Search books</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+<div class="container mt-5 mb-5">
+  <app-book-item-admin></app-book-item-admin>
 </div>

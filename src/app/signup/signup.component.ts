@@ -24,12 +24,13 @@ export class SignupComponent implements OnInit {
       email: value.email,
       password: value.password,
       isAdmin:"N"
-       });}
+       })}
 
   onSubmit() {
   this.createUser(this.signupForm.value)
      .then(
       res=>{
+        console.log(res.id);
       this.router.navigate(['/signin'])
       }
     )

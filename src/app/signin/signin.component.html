@@ -30,6 +30,7 @@
             <form action="index.html" (ngSubmit)="onSubmit()" #f="ngForm">
               <div class="form-group">
                 <label for="email">Email</label>
+
                 <input
                   type="email"
                   ngModel
@@ -53,12 +54,13 @@
                   required
                 />
               </div>
+
               <button
                 class="btn btn-primary"
                 type="submit"
                 [disabled]="!f.valid"
               >
-                Sign-in
+                Login
               </button>
             </form>
           </div>
