@@ -1,3 +1,4 @@
+
 <!-- PAGE HEADER -->
 <header id="page-header">
   <div class="container">
@@ -6,6 +7,17 @@
         <h1>Welcome Admin</h1>
         <button class="btn btn-success" type="button" routerLink="/addbook">Add a book</button>
       </div>
+      <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">
+              Manage
+          </button>
+          <div class="dropdown-menu" style="cursor: pointer">
+              <!-- <a class="dropdown-item" routerLink="/qna">Q & A</a>
+              <a class="dropdown-item" routerLink="/contact">Contact Us</a>
+              <div class="dropdown-divider"></div> -->
+              <a class="dropdown-item" routerLink="/home">Logout</a>
+          </div>
+      </div>
     </div>
   </div>
 </header>
@@ -13,50 +25,75 @@
 <!-- SEARCH -->
 <div class="container mt-5 mb-5">
     <div class="row">
-      <div class="col-md-4">
-          <form>
+      
+          <form (ngSubmit)="onSubmit()" #f="ngForm">
+              <div class="col-md-6">
               <div class="form-group">
                   <label for="branch">Select Branch *</label>
-                  <select class="form-control" id="branch">
-                      <option>CS</option>
-                      <option>EC</option>
-                      <option>EX</option>
-                      <option>ME</option>
-                      <option>FT</option>
-                      <option>CM</option>
+                  <select 
+                  class="form-control" ngModel name="branchOption"
+                id="branch">
+                <option value="" selected disabled hidden>Choose Branch</option>
+                 <option
+                      *ngFor="let option of myOption" 
+                      [value]="option.value">{{option.option}}</option>
+                      
                   </select>
               </div>
-          </form>
-      </div>
-      <div class="col-md-4">
-          <form>
+            </div>
+             
+          <div class="col-md-6">  
               <div class="form-group">
                   <label for="semester">Select Semester *</label>
-                  <select class="form-control" id="semester">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
+                  <select class="form-control" id="semester"
+                  ngModel name="semester">
+                  <option value="" selected disabled hidden>Choose Semester</option>
+                      <option
+                      *ngFor="let sem of semester" 
+                      [value]="sem.value">{{sem.option}}</option>
                   </select>
               </div>
-          </form>
-      </div>
-      <div class="col-md-4">
-          <form>
-              <div class="form-group">
-                <br>
-                <button class="btn btn-success">Search books</button>
+              
+            </div> 
+            <div class="col-md-2">
+                <div class="form-group">
+                  <br>
+                  <button  type="submit" class="btn btn-success">Search books</button>
+                </div>
+           
+      
               </div>
+          
           </form>
+       
       </div>
-    </div>
-  </div>
-  <hr>
+      
+   </div>
+  <hr> 
 
 <div class="container mt-5 mb-5">
-  <app-book-item-admin></app-book-item-admin>
+    <div class="row">
+        <div class="col-md-6"  *ngFor="let book of BookDetail">
+            <div class="list-group-item clearfix mb-2">
+                <div class="pull-left">
+                  <h4>{{book.book_name}}</h4>
+                  <h5>~ {{book.author_name}}</h5>
+                  
+                  <h6>{{book.publisher_name}}</h6>
+                  
+                  <p>Branch: {{book.branch}}</p>
+                  <p>Semester:{{book.semester}}</p>
+                  
+                  <button class="btn btn-warning" routerLink="/updatebook">Edit</button>
+                  <button class="btn btn-danger">Delete</button>
+                </div>
+                <span class="pull-right">
+                  <img [src]="book.img_link" 
+                      class="img-responsive" 
+                      style="max-height: 200px; max-width: 200px;">
+                </span>
+            </div>      
+        </div>  
+      
+      </div>
 </div>
