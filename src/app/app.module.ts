@@ -20,7 +20,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 
-import { NgMultiSelectDropDownModule} from "ng-multiselect-dropdown"
+
 import { AppService } from './app.service';
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireStorageModule } from 'angularfire2/storage';
@@ -63,7 +63,6 @@ import { BookItemAdminComponent } from './adminpanel/book-item-admin/book-item-a
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    NgMultiSelectDropDownModule.forRoot(),
     AngularFireStorageModule
    
   ],
