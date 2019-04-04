@@ -23,55 +23,43 @@
     </div>
   </div>
 </header>
-
 <!-- SEARCH -->
 <div class="container mt-5 mb-5">
   <div class="row">
-<<<<<<< HEAD
-    <div class="col-md-4">
-      <form>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="col-md-6">
         <div class="form-group">
           <label for="branch">Select Branch *</label>
-          <select class="form-control" id="branch">
-            <option>CS</option>
-            <option>EC</option>
-            <option>EX</option>
-            <option>ME</option>
-            <option>FT</option>
-            <option>CM</option>
+          <select class="form-control" ngModel name="branchOption" id="branch">
+            <option value="" selected disabled hidden>Choose Branch</option>
+            <option *ngFor="let option of myOption" [value]="option.value">{{
+              option.option
+            }}</option>
           </select>
         </div>
-      </form>
-    </div>
-    <div class="col-md-4">
-      <form>
+      </div>
+
+      <div class="col-md-6">
         <div class="form-group">
           <label for="semester">Select Semester *</label>
-          <select class="form-control" id="semester">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
+          <select class="form-control" id="semester" ngModel name="semester">
+            <option value="" selected disabled hidden>Choose Semester</option>
+            <option *ngFor="let sem of semester" [value]="sem.value">{{
+              sem.option
+            }}</option>
           </select>
         </div>
-      </form>
-    </div>
-    <div class="col-md-4">
-      <form>
+      </div>
+      <div class="col-md-2">
         <div class="form-group">
           <br />
-          <button class="btn btn-success">Search books</button>
+          <button type="submit" class="btn btn-success">Search books</button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 </div>
 <hr />
-
 <div class="container mt-5 mb-5">
   <div class="container mt-5 mb-5">
     <div class="row">
@@ -85,80 +73,17 @@
           />
           <div class="card-body">
             <h4 class="card-title">{{ booksData.book_name }}</h4>
-            <span style="">&#8377; {{ booksData.book_prize }}</span>
-            <a class="btn btn-primary float-right" routerLink="/bookdetail"
-              >More</a
+            <button
+              (click)="getBook(booksData)"
+              class="btn btn-primary"
+              routerLink="/bookdetail"
             >
+              More...
+            </button>
           </div>
         </div>
         <br />
       </div>
     </div>
   </div>
-=======
-    
-        <form (ngSubmit)="onSubmit()" #f="ngForm">
-            <div class="col-md-6">
-            <div class="form-group">
-                <label for="branch">Select Branch *</label>
-                <select 
-                class="form-control" ngModel name="branchOption"
-              id="branch">
-              <option value="" selected disabled hidden>Choose Branch</option>
-               <option
-                    *ngFor="let option of myOption" 
-                    [value]="option.value">{{option.option}}</option>
-                    
-                </select>
-            </div>
-          </div>
-           
-        <div class="col-md-6">  
-            <div class="form-group">
-                <label for="semester">Select Semester *</label>
-                <select class="form-control" id="semester"
-                ngModel name="semester">
-                <option value="" selected disabled hidden>Choose Semester</option>
-                    <option
-                    *ngFor="let sem of semester" 
-                    [value]="sem.value">{{sem.option}}</option>
-                </select>
-            </div>
-            
-          </div> 
-          <div class="col-md-2">
-              <div class="form-group">
-                <br>
-                <button  type="submit" class="btn btn-success">Search books</button>
-              </div>
-         
-    
-            </div>
-        
-        </form>
-     
-    </div>
-    
- </div>
-
-<hr>
-
-<div class="container mt-5 mb-5">
-  <div class="container mt-5 mb-5"  >
-    <div class="row" >
-        <div class="col-md-3"  *ngFor="let booksData of BookDetail" >
-            <div class="card"  style="width:20rem;">
-              <img class="img-responsive" style="max-height: 300px; max-width: 300px;" 
-              [src]="booksData.img_link" alt="">
-              <div class="card-body">
-                <h4 class="card-title">{{booksData.book_name}}</h4>
-                <button (click)="getBook(booksData)" class="btn btn-primary" routerLink="/bookdetail">More...</button>
-            </div>
-          </div>
-          <br>
-          </div>
-    
->>>>>>> 4e483cb4923783455671a5e2d68671b069e1b41f
 </div>
-  </div>
-  </div>

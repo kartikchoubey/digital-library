@@ -1,15 +1,17 @@
 <!-- header -->
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark mb-0">
-    <div class="container">
-        <a class="navbar-brand" routerLink="/home">LIBRALIZE</a>
-        <ul class="navbar-nav">
-            <li class="nav-item mx-3">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-            </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link" routerLink="/qna" routerLinkActive="active">Q&A</a>
-            </li>
-             <!-- <li class="nav-item dropdown mx-3">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">LIBRALIZE</a>
+    <ul class="navbar-nav">
+      <li class="nav-item mx-3">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" routerLink="/qna" routerLinkActive="active">Q&A</a>
+      </li>
+      <!-- <li class="nav-item dropdown mx-3">
                 <a class="nav-link dropdown-toggle" 
                     data-toggle="dropdown" 
                     style="cursor: pointer;"
@@ -25,21 +27,16 @@
             <li class="nav-item mx-3">
                 <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
             </li> -->
-        </ul>
-    </div>
+    </ul>
+  </div>
 </nav>
 <!-- PAGE HEADER -->
 <header id="page-header">
   <div class="container">
     <div class="row">
       <div class="col-md-6 m-auto text-center">
-<<<<<<< HEAD
-        <h1>Contact Us</h1>
-        <p>for any queries and better support!</p>
-=======
         <h1>About Us</h1>
         <p>We at Libralize are available for you anytime.</p>
->>>>>>> 4e483cb4923783455671a5e2d68671b069e1b41f
       </div>
     </div>
   </div>
@@ -108,10 +105,15 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email" ngModel
-                  name="email"
-                  required
-                  #email="ngModel"/>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                    ngModel
+                    name="email"
+                    required
+                    #email="ngModel"
+                  />
                 </div>
               </div>
               <div class="col-md-6">
@@ -143,15 +145,19 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                    <button class="btn btn-success btn-block" type="submit" [disabled]="!f.valid">
-                        Submit
-                    </button>
+                  <button
+                    class="btn btn-success btn-block"
+                    type="submit"
+                    [disabled]="!f.valid"
+                  >
+                    Submit
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>       
+      </div>
     </div>
   </div>
 </section>
