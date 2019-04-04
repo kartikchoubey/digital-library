@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 m-auto text-center">
-        <h1>Welcome Username</h1>
+        <h1>Welcome {{userData.name}}</h1>
         <div class="dropdown">
           <button
             class="btn btn-dark dropdown-toggle"
@@ -73,9 +73,12 @@
           />
           <div class="card-body">
             <h4 class="card-title">{{ booksData.book_name }}</h4>
+            <!-- <span></span> -->
+            
+            <p><b>&#8377; {{booksData.book_prize}}</b> </p>
             <button
               (click)="getBook(booksData)"
-              class="btn btn-primary"
+              class="btn btn-primary float-right"
               routerLink="/bookdetail"
             >
               More...

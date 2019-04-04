@@ -84,8 +84,8 @@
                   <p>Branch: {{book.branch}}</p>
                   <p>Semester:{{book.semester}}</p>
                   
-                  <button class="btn btn-warning" routerLink="/updatebook">Edit</button>
-                  <button class="btn btn-danger">Delete</button>
+               <button class="btn btn-warning" (click)=getBookData(book) routerLink="/updatebook">Edit</button>
+               <button class="btn btn-danger">Delete</button>
                 </div>
                 <span class="pull-right">
                   <img [src]="book.img_link" 

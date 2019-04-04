@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6 m-auto text-center">
         <h1>Update Book</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
+     
       </div>
     </div>
   </div>
@@ -12,52 +12,86 @@
 
 <!-- CONTENT -->
 <div class="container mt-5 mb-5">
-  <form>
+  <form (ngSubmit)="onSubmit(bookData)" >
     <div class="form-group">
       <label for="name">Name of the book</label>
-      <input type="text" class="form-control" placeholder="Enter book name">
+      <input type="text"
+      [ngModelOptions]="{standalone: true}"
+         [(ngModel)]="bookData.book_name"
+         name="bookName"
+       class="form-control" placeholder="Enter book name">
     </div>
     <div class="form-group">
       <label for="name">Name of the author</label>
-      <input type="text" class="form-control" placeholder="Enter author's name">
+      <input type="text" name="bookName"
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="bookData.author_name" class="form-control" placeholder="Enter author's name">
     </div>
     <div class="form-group">
       <label for="name">Publisher name</label>
-      <input type="text" class="form-control" placeholder="Enter publisher name">
+      <input type="text" name="bookPublisher"
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="bookData.publisher_name" class="form-control" placeholder="Enter publisher name">
     </div>
     <div class="form-group">
         <label for="branch">Select Branch *</label>
-        <select class="form-control" id="branch">
-            <option>CS</option>
-            <option>EC</option>
-            <option>EX</option>
-            <option>ME</option>
-            <option>FT</option>
-            <option>CM</option>
+        <select class="form-control"
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="bookData.branch" name="branchOption" id="branch">
+          <option value="" selected disabled hidden>Choose Branch</option>
+          <option *ngFor="let option of myOption" [value]="option.value">{{
+            option.option
+          }}</option>
         </select>
+       
     </div>
     <div class="form-group">
         <label for="semester">Select Semester *</label>
-        <select class="form-control" id="semester">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
+        <select class="form-control" id="semester" 
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="bookData.semester"
+         name="semester">
+          <option value="" selected disabled hidden>Choose Semester</option>
+          <option *ngFor="let sem of semester" [value]="sem.value">{{
+            sem.option
+          }}</option>
         </select>
     </div>
     <div class="form-group">
       <label for="file">Change book cover</label>
-      <input type="file" id="file" class="form-control-file">
+      <input type="text"
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="bookData.img_link"
+       name="bookImg"
+      id="file" class="form-control-file">
       <small class="form-text text-muted" id="fileHelp">Max 3mb size</small>
     </div>
     <div class="form-group">
+        <label for="file">Add New Pdf</label>
+        <input type="text"
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="bookData.pdf_link"
+         name="bookPdf"
+        id="file" class="form-control-file">
+        
+      </div>
+      <div class="form-group">
+          <label for="file">Add Book Price</label>
+          <input type="text"
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="bookData.book_prize"
+           name="bookPrice"
+          id="file" class="form-control-file">
+          
+        </div>
+    <div class="form-group">
       <label for="message">Change book description</label>
-      <textarea class="form-control" id="message" rows="3"></textarea>
+      <textarea class="form-control" 
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="bookData.book_description"
+       name="bookDescription"
+      id="message" rows="3"></textarea>
     </div>
-    <button class="btn btn-success">Update</button>
+    <button class="btn btn-success" type="submit">Update</button>
   </form>
 </div>

@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class UserPanelComponent implements OnInit {
   @ViewChild('f') filterBookForm: NgForm;
-
+   userData=this.appService.loginUserData
   BookDetail:Book[]
   constructor(private db:AngularFirestore ,private appService:AppService) { }
   myOption=[

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore, QueryDocumentSnapshot, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 
 
@@ -19,7 +20,8 @@ userDetail:{
   password:string
 }
 
-  constructor(private db:AngularFirestore,private router:Router) { }
+  constructor(private db:AngularFirestore,
+   private appService:AppService, private router:Router) { }
   @ViewChild('f') signinForm: NgForm;
 
   ngOnInit() {
@@ -54,6 +56,7 @@ userDetail:{
               
      if(this.userList.length ==1){
       this.userDetail= this.userList[0].userData;
+      this.appService.loginUserData=this.userDetail
       console.log(this.userDetail.name)
        this.router.navigate(['/userpanel']);
      }else{

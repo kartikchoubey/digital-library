@@ -39,6 +39,9 @@ export class AdminpanelComponent implements OnInit {
      this.BookDetail=books;
     })
   }
+  getBookData(value:Object){
+     this.appService.getBookForUpdate(value);
+  }
    
   onSubmit(){
     console.log(this.filterBookForm.value)
