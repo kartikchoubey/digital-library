@@ -12,7 +12,8 @@
           <h4>Branch : {{book.branch}}</h4>
           <h4>Semester :{{book.semester}}</h4>
           <hr>
-        <a [href]="book.pdf_link"> <button class="btn btn-danger btn-block"   type="button">PDF Link</button></a> 
+        <a [href]="book.pdf_link" > <button [disabled]='pdf_link' class="btn btn-danger btn-block"  
+           type="button">PDF Link</button></a> 
        <a [href]="book.buy_link"><button class="btn btn-warning btn-block" type="button">Buy Link</button></a> 
      
       </div>
